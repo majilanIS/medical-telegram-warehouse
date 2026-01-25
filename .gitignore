@@ -1,0 +1,86 @@
+# ===============================
+# Environment & Secrets
+# ===============================
+.env
+.env.*
+*.key
+*.pem
+
+# ===============================
+# Python
+# ===============================
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.egg-info/
+dist/
+build/
+.eggs/
+.venv/
+venv/
+env/
+pip-wheel-metadata/
+
+# ===============================
+# Jupyter Notebooks
+# ===============================
+.ipynb_checkpoints/
+
+# ===============================
+# Data Lake (RAW DATA)
+# ===============================
+data/raw/
+data/**/*.json
+data/**/*.csv
+data/**/*.parquet
+data/raw/images/
+
+# ===============================
+# Logs
+# ===============================
+logs/
+*.log
+
+# ===============================
+# Telegram Sessions
+# ===============================
+*.session
+*.session-journal
+
+# ===============================
+# dbt
+# ===============================
+medical_warehouse/target/
+medical_warehouse/dbt_packages/
+medical_warehouse/logs/
+
+# ===============================
+# Docker
+# ===============================
+*.env.docker
+docker-compose.override.yml
+
+# ===============================
+# OS & Editor Files
+# ===============================
+.DS_Store
+Thumbs.db
+.vscode/*
+!.vscode/settings.json
+.idea/
+
+# ===============================
+# Test & Coverage
+# ===============================
+.coverage
+htmlcov/
+.pytest_cache/
+
+# ===============================
+# Temporary / Backup Files
+# ===============================
+*.tmp
+*.bak
+*.swp
+*~
