@@ -76,3 +76,30 @@ It consists of **Task-1 (Data Scraping)** and **Task-2 (Data Modeling & Transfor
 - **Encoding**: PostgreSQL stores text in UTF-8; Windows console may need `chcp 65001` to display emojis.
 - **Data Count**: Currently 8046 messages loaded from Telegram channels.
 - **Next Steps**: Task-3 (YOLO object detection) to enrich images and integrate with the warehouse.
+
+- ---
+
+## Task 3 - Data Enrichment with YOLO
+
+**Objective:** Analyze images using YOLOv8 and integrate results into the data warehouse.
+
+**Key Steps:**
+- Scan images in `data/raw/images/`
+- Run YOLOv8 nano model (`yolov8n.pt`) to detect objects
+- Classify images:
+  - `promotional`: Person + product
+  - `product_display`: Product only
+  - `lifestyle`: Person only
+  - `other`: Neither
+- Save results to `data/yolo_results.csv`
+- Load results into PostgreSQL table `raw.yolo_detections` using `src/03_yolo_load_to_postgres.py`
+- Integrate with `fct_messages` for analysis
+
+**Deliverables:**
+- `src/03_yolo_detect_create_csv.py`
+- `src/03_yolo_load_to_postgres.py`
+- PostgreSQL table `raw.yolo_detections`
+- CSV results in `data/yolo_results.csv`
+
+---
+
